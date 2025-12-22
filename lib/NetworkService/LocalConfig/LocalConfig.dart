@@ -1,0 +1,34 @@
+class LocalConfig {
+  static String userName = 'userName';
+  static String firstName = 'firstName';
+  static String lastName = 'lastName';
+  static String userEmail = 'userEmail';
+  static String userPassword = 'userPassword';
+  static String userProfile = 'userProfile';
+  static String isLogin = 'isLogin';
+  static String longitude = 'longitude';
+  static String latitude = 'latitude';
+  static String landmark = 'landmark';
+  static String locality = 'locality';
+  static String state = 'state';
+  static String pinCode = 'pinCode';
+  static String requestId = 'requestId';
+  static String city = 'city';
+  static String userPhoneNumber = 'userPhoneNumber';
+  static String isRemember = 'isRemember';
+  static String isSliderComplete = 'isSliderComplete';
+  static String token = 'token';
+  static String fcmToken = 'fcmToken';
+  static String deviceOs = 'deviceOs';
+  static String languageCode = 'languageCode';
+  static String refreshToken = 'refreshToken';
+  static String sessionToken = 'sessionToken';
+  static String isProfileCompleted = 'isProfileCompleted';
+  static String isTrainer = 'isTrainer';
+  static String profilePic = 'profilePic';
+  static String gynName = 'gymName';
+  static String gymOwnerName = 'gymOwnerName';
+  static String gymUserId = 'gymUserId';
+  static String subscriptionId = 'subscriptionId';
+  static String themeStatus = 'themeStatus';
+}

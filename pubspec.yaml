@@ -1,0 +1,81 @@
+name: mbayat_user_app
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  dio: ^5.9.0
+  flutter_svg: ^2.1.0
+  font_awesome_flutter: ^10.9.0
+  permission_handler: ^12.0.1
+  provider: ^6.1.5+1
+  shared_preferences: ^2.5.3
+  top_snackbar_flutter: ^3.3.0
+  url_launcher: ^6.3.1
+  flutter_screenutil: ^5.9.3
+  easy_localization: ^3.0.8
+  google_fonts: ^6.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/l10n/
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: CabinetGrotesk
+      fonts:
+        - asset: assets/fonts/CabinetGrotesk-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/CabinetGrotesk-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/CabinetGrotesk-Light.ttf
+          weight: 300
+        - asset: assets/fonts/CabinetGrotesk-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/CabinetGrotesk-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/CabinetGrotesk-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/CabinetGrotesk-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/CabinetGrotesk-Black.ttf
+          weight: 900
+
+    - family: HostGrotesk
+      fonts:
+        - asset: assets/fonts/HostGrotesk-Light.ttf
+          weight: 300
+        - asset: assets/fonts/HostGrotesk-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/HostGrotesk-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/HostGrotesk-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/HostGrotesk-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/HostGrotesk-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/HostGrotesk-Italic.ttf
+          style: italic
+        - asset: assets/fonts/HostGrotesk-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/HostGrotesk-MediumItalic.ttf
+          weight: 500
+          style: italic
