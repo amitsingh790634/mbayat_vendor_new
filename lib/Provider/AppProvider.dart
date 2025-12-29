@@ -6,6 +6,7 @@ class AppProvider {
     ChangeNotifierProvider(create: (_) => InternetProvider()),
     ChangeNotifierProvider(create: (_) => LoaderNotifier()),
     ChangeNotifierProvider(create: (_) => PaginationProvider()),
+    ChangeNotifierProvider(create: (_) => LoginProvider()),
 
     // Todo
   ];

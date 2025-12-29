@@ -1,13 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:mbayat_user_app/utils/allExport.dart';
 
+import 'Utils/allExport.dart';
+
 class MyPhone extends StatelessWidget {
   const MyPhone({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => InternetProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => InternetProvider()),
+      ],
       child: const _MyPhoneContent(),
     );
   }
@@ -21,14 +25,14 @@ class _MyPhoneContent extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: StatusBarStyle.light,
       child: MaterialApp(
-        title: "Mbayat",
+        title: 'Mbayat',
         debugShowCheckedModeBanner: false,
         color: AppColors.primary500,
-        locale: context.locale,
         navigatorKey: navigatorKey,
+        locale: context.locale,
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
-        home:  LoginScreen(),
+        home: LoginScreen(),
         builder: (context, child) {
           return Stack(
             children: [
