@@ -30,11 +30,10 @@ void main() async {
           designSize: const Size(390, 844),
           minTextAdapt: true,
           splitScreenMode: true,
+          // child:  LoginScreen(),
           child: const MyPhone(),
         ),
       ),
     ),
   );
 }
-
-// Raja

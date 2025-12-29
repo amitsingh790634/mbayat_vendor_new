@@ -28,7 +28,7 @@ class _MyPhoneContent extends StatelessWidget {
         navigatorKey: navigatorKey,
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
-        home: const SplashScreen(),
+        home:  LoginScreen(),
         builder: (context, child) {
           return Stack(
             children: [

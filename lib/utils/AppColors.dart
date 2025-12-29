@@ -3,6 +3,7 @@ import 'package:mbayat_user_app/Utils/AllExport.dart';
 class AppColors {
   // ---------------- NEUTRAL ----------------
   static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
 
   static const Color neutral25 = Color(0xFFF9FAFB);
   static const Color neutral50 = Color(0xFFF3F4F6);
@@ -69,4 +70,7 @@ class AppColors {
   static const Color success500 = Color(0xFF22C55E);
   static const Color warning500 = Color(0xFFF59E0B);
   static const Color danger500 = Color(0xFFEF4444);
+
+  // ----------------- OVERLAYS ----------------
+  static const Color textFieldColor= Color(0xFF64748B); // 40% opacity black
 }
