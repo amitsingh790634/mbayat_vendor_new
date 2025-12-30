@@ -1,42 +1,35 @@
-
 import 'package:mbayat_user_app/utils/allExport.dart';
 
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class ForgotScreen extends StatefulWidget {
+  const ForgotScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgotScreen> createState() => _ForgotScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgotScreenState extends State<ForgotScreen> {
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<LoginProvider>(context);
+    final emailController = TextEditingController();
     return CustomScaffold(
-      appBarHeight: 0,
-      showBackButton: false,
-      isCenterTitle: false,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            kHeightGap(30),
-            TextWidget(
-              text: "welcome_vendor",
-              type: AppTextType.h1,
-              color: AppColors.white,
-              fontWeight: FontWeight.w400,
+      title: "no_worries",
+      // appBarHeight: 0,
+      showBackButton: true,
+      isCenterTitle: true,
+      titleColor: AppColors.white,
+      body: Column(
+        children: [
+          kHeightGap(20),
+          Center(
+            child: SvgPic(
+              image: AppImages.loginImageUrl,
+              height: MediaQuery.sizeOf(context).height * 0.2,
+              fit: BoxFit.contain,
             ),
-
-            kHeightGap(20),
-            Center(
-              child: SvgPic(
-                image: AppImages.loginImageUrl,
-                height: MediaQuery.sizeOf(context).height * 0.2,
-                fit: BoxFit.contain,
-              ),
-            ),
-            Container(
+          ),
+          Expanded(
+            child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
                 color: AppColors.white,
@@ -57,59 +50,53 @@ class _LoginScreenState extends State<LoginScreen> {
                         // NavigationService.push( const RegisterScreen());
                       },
                       child: TextWidget(
-                        text: "login",
+                        text: "forgot_password",
                         type: AppTextType.h1,
                         fontSize: 22.sp,
                       ),
                     ),
-
+                  
                     CustomTextFormField(
                       prefixIconWidget: Icon(
                         Icons.email_outlined,
                         color: AppColors.primary500,
                         size: 24.sp,
                       ),
-                      controller: provider.emailController,
+                      controller: emailController,
                       keyboardType: TextInputType.emailAddress,
-                      hintText: "admin@email.com",
+                      hintText: "Email",
                       enabled: true,
                       label: "",
                     ),
-                    CustomTextFormField(
-                      prefixIconWidget: Icon(
-                        Icons.email_outlined,
-                        color: AppColors.primary500,
-                        size: 24.sp,
-                      ),
-                      controller: provider.passwordController,
-                      keyboardType: TextInputType.visiblePassword,
-                      hintText: "***",
-                      enabled: true,
-                      label: "",
-                      isPasswordField: true,
-                    ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          NavigationService.push(const ForgotScreen());
-                        },
-                        child: const TextWidget(
-                          text:"forgot_password",
-                          type: AppTextType.body,
-                          fontWeight: FontWeight.w600,
-                        ),
+                    Padding(
+                      padding: .symmetric(horizontal: 10, vertical: 16),
+                      child: Row(
+                        children: [
+                          const TextWidget(
+                            text:"remember_password",
+                            type: AppTextType.small,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.navyBlueColor,
+                          ),
+                          kWidthGap(4),
+                          const TextWidget(
+                            text:"login",
+                            type: AppTextType.body,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ],
                       ),
                     ),
-
                     AppButton(
-                      text: "enter",
+                      text: "send_code",
                       type: AppButtonType.primary,
-                      onTap: () {},
+                      onTap: () {
+                        NavigationService.push(OTPScreen(email: emailController.text,));
+                      },
                     ),
                     // const SizedBox(height: 10), // Add your login form here
-                    const SizedBox(height: 30),
-
+                    kHeightGap(30),
+                  
                     const Row(
                       children: [
                         Expanded(child: Divider()),
@@ -129,13 +116,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: MediaQuery.sizeOf(context).height * 0.1,
                       ),
                     ),
-                    kHeightGap(40),
+                    // kHeightGap(200)
                   ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

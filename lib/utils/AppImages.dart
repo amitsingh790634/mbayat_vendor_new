@@ -2,6 +2,9 @@
 class AppImages {
   static const imageUrl = 'assets/images/';
   static const lottieUrl = 'assets/lotties/';
+
+
+  
   static const String loginImageUrl = '${imageUrl}login_image.svg';
   static const String logo = '${imageUrl}logo.svg';
   // static const String backgroundImage = '${imageUrl}background.png';

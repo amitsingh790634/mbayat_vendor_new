@@ -1,3 +1,5 @@
+import 'package:mbayat_user_app/screens/OtpScreen/OtpProvider/otpProvider.dart';
+
 import '../utils/allExport.dart';
 
 class AppProvider {
@@ -7,6 +9,7 @@ class AppProvider {
     ChangeNotifierProvider(create: (_) => LoaderNotifier()),
     ChangeNotifierProvider(create: (_) => PaginationProvider()),
     ChangeNotifierProvider(create: (_) => LoginProvider()),
+    ChangeNotifierProvider(create: (_) => OtpProvider()),
 
     // Todo
   ];

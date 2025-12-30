@@ -1,11 +1,10 @@
-
-
 import 'package:easy_localization/easy_localization.dart';
+import 'package:mbayat_user_app/utils/NavigationService.dart';
 
 import '../Utils/AllExport.dart';
 
 class CustomScaffold extends StatelessWidget {
-  final String title;
+  final String? title;
   final Widget body;
   final Widget? bottomNavigationBar;
   final bool showBackButton;
@@ -17,10 +16,11 @@ class CustomScaffold extends StatelessWidget {
   final Color? backButtonColor;
   final Color? titleColor;
   final VoidCallback? onLeadingTap;
+  final Color? iconColor ;
 
   const CustomScaffold({
     super.key,
-    required this.title,
+    this.title,
     required this.body,
     this.showBackButton = true,
     this.leadingIcon,
@@ -31,13 +31,15 @@ class CustomScaffold extends StatelessWidget {
     this.isCenterTitle = false,
     this.backButtonColor,
     this.titleColor,
-    this.onLeadingTap, // NEW FIELD
+    this.onLeadingTap, 
+    this.iconColor
+    // NEW FIELD
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor ?? AppColors.primary900,
+      backgroundColor: backgroundColor ?? AppColors.primary500,
       bottomNavigationBar: bottomNavigationBar,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(appBarHeight.h),
@@ -48,7 +50,7 @@ class CustomScaffold extends StatelessWidget {
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: backgroundColor ?? AppColors.primary900,
+              color: backgroundColor ?? AppColors.primary500,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(16.r),
                 topRight: Radius.circular(16.r),
@@ -57,21 +59,22 @@ class CustomScaffold extends StatelessWidget {
             child: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
+              surfaceTintColor: Colors.transparent,
               systemOverlayStyle: SystemUiOverlayStyle.light,
               centerTitle: isCenterTitle,
-              leading:
-                  showBackButton
-                      ? GestureDetector(
-                        // onTap: onLeadingTap ?? () => Get.back(), // Tap handler
-                        child: leadingIcon ?? _defaultBackButton(),
-                      )
-                      : null,
-              title: Text(
-                title.tr(),
-                style: AppTypography.titleStyle(
-                  color: titleColor ?? AppColors.white,
-                ),
-      
+              leading: showBackButton
+                  ? GestureDetector(
+                      onTap:
+                          onLeadingTap ??
+                          () => NavigationService.pop(), // Tap handler
+                      child: leadingIcon ?? _defaultBackButton(),
+                    )
+                  : null,
+              title: TextWidget(
+                text: title?.tr() ?? "",
+                type: AppTextType.h1,
+                fontWeight: FontWeight.w400,
+                color: titleColor ?? AppColors.white,
               ),
               actions: actions,
             ),
@@ -88,10 +91,10 @@ class CustomScaffold extends StatelessWidget {
       padding: EdgeInsets.only(left: 8.h),
       child: Container(
         decoration: BoxDecoration(
-          color: backButtonColor ?? AppColors.accent1_100,
+          color: backButtonColor ?? Colors.transparent,
           shape: BoxShape.circle,
         ),
-        child: Icon(Icons.arrow_back, color: AppColors.white, size: 24.sp),
+        child: Icon(Icons.arrow_back, color: iconColor?? AppColors.white, size: 24.sp),
       ),
     );
   }

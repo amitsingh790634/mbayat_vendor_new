@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:mbayat_user_app/Utils/AllExport.dart';
 
 enum AppButtonType { primary, secondary }
@@ -12,6 +13,7 @@ class AppButton extends StatelessWidget {
   final Widget? prefix;
 
   final double height;
+  final double? width;
   final double radius;
 
   const AppButton({
@@ -22,6 +24,7 @@ class AppButton extends StatelessWidget {
     this.isDisabled = false,
     this.prefix,
     this.height = 48,
+    this.width,
     this.radius = 24,
   });
 
@@ -36,7 +39,8 @@ class AppButton extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         height: height,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        width: width??.infinity,
+        padding: .symmetric(horizontal: 20),
         decoration: BoxDecoration(
           color: _backgroundColor(isPrimary),
           borderRadius: BorderRadius.circular(radius),
@@ -48,7 +52,7 @@ class AppButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (prefix != null) ...[prefix!, const SizedBox(width: 8)],
-            Text(text, style: _textStyle(isPrimary)),
+            Text(text.tr(), style: _textStyle(isPrimary)),
           ],
         ),
       ),

@@ -4,6 +4,10 @@ class AppTypography {
   // Font families
   static const String cabinet = 'CabinetGrotesk';
   static const String host = 'HostGrotesk';
+  static const String h1Font = 'Plus Jakarta Sans';
+  static const String h2Font = 'Source Sans Pro';
+  static const String restFont = 'Inter';
+
 
   // Font sizes
   static double h1 = 32.sp;
@@ -18,35 +22,35 @@ class AppTypography {
 
   // ---------- CABINET GROTESK ----------
   static TextStyle h1Style({Color? color}) => TextStyle(
-    fontFamily: cabinet,
+    fontFamily: h1Font,
     fontSize: h1,
     fontWeight: FontWeight.w700,
     color: color ?? Colors.black,
   );
 
   static TextStyle h2Style({Color? color}) => TextStyle(
-    fontFamily: cabinet,
+    fontFamily: h2Font,
     fontSize: h2,
     fontWeight: FontWeight.w600,
     color: color ?? Colors.black,
   );
 
   static TextStyle h3Style({Color? color}) => TextStyle(
-    fontFamily: cabinet,
+    fontFamily: restFont,
     fontSize: h3,
     fontWeight: FontWeight.w600,
     color: color ?? Colors.black,
   );
 
   static TextStyle titleStyle({Color? color}) => TextStyle(
-    fontFamily: cabinet,
+    fontFamily: restFont,
     fontSize: title,
     fontWeight: FontWeight.w600,
     color: color ?? Colors.black,
   );
 
   static TextStyle buttonStyle({Color? color}) => TextStyle(
-    fontFamily: cabinet,
+    fontFamily: restFont,
     fontSize: button,
     fontWeight: FontWeight.w600,
     color: color ?? Colors.white,
@@ -54,28 +58,28 @@ class AppTypography {
 
   // ---------- HOST GROTESK ----------
   static TextStyle subtitleStyle({Color? color}) => TextStyle(
-    fontFamily: host,
+    fontFamily: restFont,
     fontSize: subtitle,
     fontWeight: FontWeight.w500,
     color: color ?? Colors.black54,
   );
 
   static TextStyle bodyStyle({Color? color}) => TextStyle(
-    fontFamily: host,
+    fontFamily: restFont,
     fontSize: body,
     fontWeight: FontWeight.w400,
     color: color ?? Colors.black,
   );
 
   static TextStyle smallStyle({Color? color}) => TextStyle(
-    fontFamily: host,
+    fontFamily: restFont,
     fontSize: small,
     fontWeight: FontWeight.w400,
     color: color ?? Colors.black54,
   );
 
   static TextStyle tinyStyle({Color? color}) => TextStyle(
-    fontFamily: host,
+    fontFamily: restFont,
     fontSize: tiny,
     fontWeight: FontWeight.w400,
     color: color ?? Colors.black45,

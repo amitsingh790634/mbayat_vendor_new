@@ -73,4 +73,5 @@ class AppColors {
 
   // ----------------- OVERLAYS ----------------
   static const Color textFieldColor= Color(0xFF64748B); // 40% opacity black
+  static const Color navyBlueColor= Color(0xFF03314B); // 40% opacity black
 }
