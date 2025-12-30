@@ -7,6 +7,9 @@ class AppImages {
   
   static const String loginImageUrl = '${imageUrl}login_image.svg';
   static const String logo = '${imageUrl}logo.svg';
+  static const String groupImage = '${imageUrl}group1.svg';
+  static const String groupImagePng = '${imageUrl}group1.png';
+  static const String common = '${imageUrl}common.svg';
   // static const String backgroundImage = '${imageUrl}background.png';
   // static const String splash = '${imageUrl}splash.png';
   // static const String onboarding = '${imageUrl}onboarding.svg';

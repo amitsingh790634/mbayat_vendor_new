@@ -20,5 +20,15 @@
   "name" : "Name:",
   "age_gender" : "Age/ Gender:",
   "product" : "Product:",
-  "status" : "Status:"
+  "status" : "Status:",
+  "recent_orders": "Recent Orders",
+  "order_history": "Order History",
+  "product_name" : "Product Name",
+  "box_type" : "Box Type",
+  "order_date" : "Order Date",
+  "customer_name" : "Customer Name",
+  "assign_product" : "Assign Product",
+  "delivered": "Delivered",
+  "order_status": "Order Status"
+
 }

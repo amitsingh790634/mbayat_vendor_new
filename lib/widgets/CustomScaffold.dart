@@ -17,7 +17,9 @@ class CustomScaffold extends StatelessWidget {
   final Color? titleColor;
   final VoidCallback? onLeadingTap;
   final Color? iconColor ;
-  final bool? isShowDrawer; // NEW FIELD
+  final bool? isShowDrawer; 
+  final Color? appBarBgColor; 
+  // NEW FIELD
 
   const CustomScaffold({
     super.key,
@@ -35,6 +37,7 @@ class CustomScaffold extends StatelessWidget {
     this.onLeadingTap, 
     this.iconColor,
     this.isShowDrawer = false,
+    this.appBarBgColor,
     // NEW FIELD
   });
 
@@ -59,7 +62,7 @@ class CustomScaffold extends StatelessWidget {
               ),
             ),
             child: AppBar(
-              backgroundColor: Colors.transparent,
+              backgroundColor: appBarBgColor ??Colors.transparent,
               elevation: 0,
               surfaceTintColor: Colors.transparent,
               systemOverlayStyle: SystemUiOverlayStyle.light,

@@ -97,6 +97,7 @@ class TextWidget extends StatelessWidget {
             ? TextDecoration.lineThrough
             : TextDecoration.none,
       ),
+      softWrap: true,
     );
   }
 }

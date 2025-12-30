@@ -1,3 +1,4 @@
+
 import '../../Utils/allExport.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -85,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            kHeightGap(10),
+            kHeightGap(15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -95,30 +96,13 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.filter_list,
-                    size: 18,
-                    color: AppColors.white,
-                  ),
-                  label: TextWidget(
-                    text: "filter",
-                    type: AppTextType.body,
-                    fontSize: 14,
-                    color: AppColors.white,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.filterButtonColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
+                FilterButton(
+                  text: "filter",
+                  onTap: () {},
                 ),
               ],
             ),
-            kHeightGap(20),
+            kHeightGap(10),
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,

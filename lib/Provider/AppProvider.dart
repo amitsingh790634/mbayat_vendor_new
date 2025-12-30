@@ -1,4 +1,6 @@
 
+
+
 import '../utils/allExport.dart';
 
 class AppProvider {
@@ -9,6 +11,8 @@ class AppProvider {
     ChangeNotifierProvider(create: (_) => PaginationProvider()),
     ChangeNotifierProvider(create: (_) => LoginProvider()),
     ChangeNotifierProvider(create: (_) => OtpProvider()),
+    ChangeNotifierProvider(create: (_) => OrderTabProvider()),
+    ChangeNotifierProvider(create: (_) => SetBoxTabProvider()),
 
     // Todo
   ];
