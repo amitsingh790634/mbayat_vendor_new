@@ -1,4 +1,3 @@
-import 'package:mbayat_user_app/screens/OtpScreen/OtpProvider/otpProvider.dart';
 
 import '../utils/allExport.dart';
 

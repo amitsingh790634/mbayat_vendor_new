@@ -1,3 +1,5 @@
+import 'package:mbayat_user_app/screens/HomeScreen/homeScreen.dart';
+
 import '../../Utils/allExport.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -139,11 +141,12 @@ class _OTPScreenState extends State<OTPScreen> {
 
                     AppButton(
                       onTap: () {
-                        if (formKey.currentState!.validate()) {
-                          logDebug(
-                            "Valid name: ${authProvider.pinController.text}",
-                          );
-                        }
+                        // if (formKey.currentState!.validate()) {
+                        //   logDebug(
+                        //     "Valid name: ${authProvider.pinController.text}",
+                        //   );
+                        // }
+                        NavigationService.pushAndRemoveUntil(HomeScreen());
                       },
                       text: "send_code",
                     ),

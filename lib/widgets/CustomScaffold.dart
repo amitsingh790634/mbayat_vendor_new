@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:mbayat_user_app/utils/NavigationService.dart';
+import 'package:mbayat_user_app/widgets/CustomDrawer.dart';
 
 import '../Utils/AllExport.dart';
 
@@ -17,12 +17,13 @@ class CustomScaffold extends StatelessWidget {
   final Color? titleColor;
   final VoidCallback? onLeadingTap;
   final Color? iconColor ;
+  final bool? isShowDrawer; // NEW FIELD
 
   const CustomScaffold({
     super.key,
     this.title,
     required this.body,
-    this.showBackButton = true,
+    this.showBackButton = false,
     this.leadingIcon,
     this.bottomNavigationBar,
     this.actions,
@@ -32,7 +33,8 @@ class CustomScaffold extends StatelessWidget {
     this.backButtonColor,
     this.titleColor,
     this.onLeadingTap, 
-    this.iconColor
+    this.iconColor,
+    this.isShowDrawer = false,
     // NEW FIELD
   });
 
@@ -81,6 +83,7 @@ class CustomScaffold extends StatelessWidget {
           ),
         ),
       ),
+      drawer: isShowDrawer == true ? CustomAppDrawer() : null,
       body: body,
     );
   }

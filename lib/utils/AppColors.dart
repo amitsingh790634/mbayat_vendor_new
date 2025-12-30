@@ -67,11 +67,32 @@ class AppColors {
   static const Color accent2_900 = Color(0xFF331800);
 
   // ---------------- SYSTEM ----------------
+  // static const Color success500 = Color(0xFF22C55E);
+  static const Color success100 = Color(0xFFDCFCE7);
+  static const Color success200 = Color(0xFFBBF7D0);
+  static const Color success300 = Color(0xFF86EFAC);
+  static const Color success400 = Color(0xFF4ADE80);
   static const Color success500 = Color(0xFF22C55E);
+  static const Color success600 = Color(0xFF16A34A);
+  static const Color success700 = Color(0xFF15803D);
+  static const Color success800 = Color(0xFF166534);
+  static const Color success900 = Color(0xFF14532D);
   static const Color warning500 = Color(0xFFF59E0B);
   static const Color danger500 = Color(0xFFEF4444);
 
   // ----------------- OVERLAYS ----------------
   static const Color textFieldColor= Color(0xFF64748B); // 40% opacity black
   static const Color navyBlueColor= Color(0xFF03314B); // 40% opacity black
+
+
+  // ----------------- SURFACE ----------------
+  static const Color surface100 = Color(0xFFF6F5FB);
+  static const Color surface200 = Color(0xFFECEAF6);
+  static const Color surface300 = Color(0xFFDCD9F0);
+  static const Color surface400 = Color(0xFFC8C3E8);
+  static const Color surface500 = Color(0xFFADA6DD);
+  static const Color surface600 = Color(0xFF8E86C9);
+  static const Color surface700 = Color(0xFF6F67B0);
+  static const Color surface800 = Color(0xFF504A87);
+  static const Color surface900 = Color(0xFF332F5E);
 }
