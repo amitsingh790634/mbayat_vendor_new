@@ -1,11 +1,3 @@
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mbayat_user_app/screens/OtpScreen/OtpProvider/otpProvider.dart';
-import 'package:mbayat_user_app/utils/Const/appStrings.dart';
-import 'package:mbayat_user_app/utils/validations.dart';
-import 'package:mbayat_user_app/widgets/AppButton.dart';
-import 'package:mbayat_user_app/widgets/CustomPadding.dart';
-import 'package:pinput/pinput.dart';
-
 import '../../Utils/allExport.dart';
 
 class OTPScreen extends StatefulWidget {
