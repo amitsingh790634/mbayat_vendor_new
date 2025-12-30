@@ -8,5 +8,17 @@
   "remember_password": "Remember Password?",
   "send_code": "Send Code",
   "or":"or",
-  "dashboard_analytics": "Dashboard analytics"
+  "dashboard_analytics": "Dashboard analytics",
+  "individual_order": "Individual Order",
+  "order": "Order",
+  "sales": "Sales",
+  "b2border": "B2B Order",
+  "types_of_boxes": "Types Of Boxes",
+  "mystery_box_order": "Mystery Box Order",
+  "action" : "Action:",
+  "filter" : "Filter",
+  "name" : "Name:",
+  "age_gender" : "Age/ Gender:",
+  "product" : "Product:",
+  "status" : "Status:"
 }

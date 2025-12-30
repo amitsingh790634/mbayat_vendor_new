@@ -83,6 +83,7 @@ class AppColors {
   // ----------------- OVERLAYS ----------------
   static const Color textFieldColor= Color(0xFF64748B); // 40% opacity black
   static const Color navyBlueColor= Color(0xFF03314B); // 40% opacity black
+  static const Color filterButtonColor = Color(0xFF462769);
 
 
   // ----------------- SURFACE ----------------
@@ -95,4 +96,6 @@ class AppColors {
   static const Color surface700 = Color(0xFF6F67B0);
   static const Color surface800 = Color(0xFF504A87);
   static const Color surface900 = Color(0xFF332F5E);
+
+
 }

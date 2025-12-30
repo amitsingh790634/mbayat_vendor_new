@@ -55,6 +55,7 @@ export 'package:mbayat_user_app/utils/validations.dart';
 export 'package:mbayat_user_app/utils/Const/appStrings.dart';
 export 'package:pinput/pinput.dart';
 export 'package:mbayat_user_app/screens/HomeScreen/homeScreen.dart';
+export 'package:mbayat_user_app/widgets/LabelValueRow.dart';
 
 
 // 
