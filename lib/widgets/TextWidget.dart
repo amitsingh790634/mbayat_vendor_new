@@ -71,7 +71,6 @@ class TextWidget extends StatelessWidget {
       case AppTextType.error:
         return AppTypography.errorStyle(color: color);
       case AppTextType.body:
-      default:
         return AppTypography.bodyStyle(color: color);
     }
   }

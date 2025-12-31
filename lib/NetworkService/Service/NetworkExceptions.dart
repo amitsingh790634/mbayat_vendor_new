@@ -27,18 +27,23 @@ class NetworkExceptions {
       try {
         if (error is DioExceptionType) {
           switch (error) {
+            // ignore: constant_pattern_never_matches_value_type
             case DioExceptionType.cancel:
               errorMessage = "Request Cancelled";
               break;
+            // ignore: constant_pattern_never_matches_value_type
             case DioExceptionType.connectionTimeout:
               errorMessage = "Connection request timeout";
               break;
+            // ignore: constant_pattern_never_matches_value_type
             case DioExceptionType.unknown:
               errorMessage = "No internet connection";
               break;
+            // ignore: constant_pattern_never_matches_value_type
             case DioExceptionType.receiveTimeout:
               errorMessage = "Send timeout in connection with API server";
               break;
+            // ignore: constant_pattern_never_matches_value_type
             case DioExceptionType.badResponse:
               switch (error.response?.statusCode) {
                 case 400:
@@ -70,6 +75,7 @@ class NetworkExceptions {
                   errorMessage = "Received invalid status code: $responseCode";
               }
               break;
+            // ignore: constant_pattern_never_matches_value_type
             case DioErrorType.sendTimeout:
               errorMessage = "Send timeout in connection with API server";
               break;

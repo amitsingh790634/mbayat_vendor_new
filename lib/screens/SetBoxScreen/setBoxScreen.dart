@@ -8,10 +8,6 @@ class SetBoxScreen extends StatelessWidget {
     final tabProvider = context.watch<SetBoxTabProvider>();
 
     return CustomScaffold(
-      showBackButton: true,
-      appBarBgColor: AppColors.primary500,
-      backButtonColor: AppColors.white.withOpacity(0.1),
-      backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(

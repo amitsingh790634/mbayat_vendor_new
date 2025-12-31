@@ -1,6 +1,5 @@
 import 'package:mbayat_user_app/utils/allExport.dart';
 
-
 class ForgotScreen extends StatefulWidget {
   const ForgotScreen({super.key});
 
@@ -13,21 +12,15 @@ class _ForgotScreenState extends State<ForgotScreen> {
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
     return CustomScaffold(
+      backgroundColor: AppColors.primary500,
       title: "no_worries",
-      // appBarHeight: 0,
       showBackButton: true,
       isCenterTitle: true,
       titleColor: AppColors.white,
       body: Column(
         children: [
           kHeightGap(20),
-          Center(
-            child: SvgPic(
-              image: AppImages.loginImageUrl,
-              height: MediaQuery.sizeOf(context).height * 0.2,
-              fit: BoxFit.contain,
-            ),
-          ),
+          SvgPic(image: AppImages.loginImageUrl, fit: BoxFit.contain),
           Expanded(
             child: Container(
               width: double.infinity,
@@ -40,7 +33,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
               ),
               child: CustomPadding(
                 horizontal: true,
-                size: PaddingSize.lg,
+                size: PaddingSize.sm,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -55,7 +48,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
                         fontSize: 22.sp,
                       ),
                     ),
-                  
+                    kHeightGap(10),
                     CustomTextFormField(
                       prefixIconWidget: Icon(
                         Icons.email_outlined,
@@ -66,21 +59,20 @@ class _ForgotScreenState extends State<ForgotScreen> {
                       keyboardType: TextInputType.emailAddress,
                       hintText: "Email",
                       enabled: true,
-                      label: "",
                     ),
                     Padding(
                       padding: .symmetric(horizontal: 10, vertical: 16),
                       child: Row(
                         children: [
                           const TextWidget(
-                            text:"remember_password",
+                            text: "remember_password",
                             type: AppTextType.small,
                             fontWeight: FontWeight.w600,
                             color: AppColors.navyBlueColor,
                           ),
                           kWidthGap(4),
                           const TextWidget(
-                            text:"login",
+                            text: "login",
                             type: AppTextType.body,
                             fontWeight: FontWeight.w600,
                           ),
@@ -91,20 +83,20 @@ class _ForgotScreenState extends State<ForgotScreen> {
                       text: "send_code",
                       type: AppButtonType.primary,
                       onTap: () {
-                        NavigationService.push(OTPScreen(email: emailController.text,));
+                        NavigationService.push(
+                          OTPScreen(email: emailController.text),
+                        );
                       },
                     ),
                     // const SizedBox(height: 10), // Add your login form here
                     kHeightGap(30),
-                  
+
                     const Row(
                       children: [
                         Expanded(child: Divider()),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: TextWidget(text: "or",
-                            type: AppTextType.body,
-                          ),
+                          child: TextWidget(text: "or", type: AppTextType.body),
                         ),
                         Expanded(child: Divider()),
                       ],
@@ -116,7 +108,11 @@ class _ForgotScreenState extends State<ForgotScreen> {
                         height: MediaQuery.sizeOf(context).height * 0.1,
                       ),
                     ),
-                    // kHeightGap(200)
+                    SizedBox(
+                      height: MediaQuery.of(context).viewInsets.bottom > 0
+                          ? 20
+                          : MediaQuery.of(context).size.height * 0.09,
+                    ),
                   ],
                 ),
               ),
