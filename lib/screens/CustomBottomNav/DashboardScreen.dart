@@ -13,8 +13,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final List<Widget> screens = const [
     HomeScreen(),
     OrdersScreen(),
+    SetBoxScreen(),
     // Center(child: Text("Order")),
-    Center(child: Text("Product")),
+    // Center(child: Text("Product")),
     Center(child: Text("Setting")),
   ];
 
