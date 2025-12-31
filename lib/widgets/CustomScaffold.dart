@@ -94,7 +94,7 @@ class CustomScaffold extends StatelessWidget {
   // DEFAULT BACK BUTTON
   Widget _defaultBackButton() {
     return Padding(
-      padding: EdgeInsets.only(left: 8.h),
+      padding: EdgeInsets.only(left: 20.h),
       child: Container(
         decoration: BoxDecoration(
           color: backButtonColor ?? Colors.transparent,
