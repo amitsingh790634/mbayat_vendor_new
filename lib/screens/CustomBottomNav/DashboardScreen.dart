@@ -11,8 +11,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   int selectedIndex = 0;
 
   final List<Widget> screens = const [
-    Center(child: Text("Home")),
-    Center(child: Text("Order")),
+    HomeScreen(),
+    OrdersScreen(),
+    // Center(child: Text("Order")),
     Center(child: Text("Product")),
     Center(child: Text("Setting")),
   ];

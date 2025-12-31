@@ -1,3 +1,4 @@
+import 'package:mbayat_user_app/screens/CustomBottomNav/DashboardScreen.dart';
 import 'package:mbayat_user_app/utils/allExport.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -105,7 +106,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       kHeightGap(15),
-                      AppButton(text: "enter", onTap: provider.login),
+                      AppButton(text: "enter", onTap: (){
+                         NavigationService.push(const DashboardScreen());
+                      }
+                       
+                      ),
                       kHeightGap(30),
                       const Row(
                         children: [

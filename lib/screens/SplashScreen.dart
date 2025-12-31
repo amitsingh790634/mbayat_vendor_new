@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
     if (isLoggedIn) {
       NavigationService.pushAndRemoveUntil(const DashboardScreen());
     } else {
-      NavigationService.pushAndRemoveUntil(DashboardScreen());
+      NavigationService.pushAndRemoveUntil(LoginScreen());
     }
   }
 
