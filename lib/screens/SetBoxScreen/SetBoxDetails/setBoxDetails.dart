@@ -128,12 +128,6 @@ class SetBoxDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   kHeightGap(30),
-                  AppButton(
-                    text: "edit_details",
-                    type: AppButtonType.primary,
-                    radius: 6,
-                    onTap: () {},
-                  ),
 
                   Row(
                     children: [
@@ -152,22 +146,11 @@ class SetBoxDetailsScreen extends StatelessWidget {
                       Expanded(
                         child: SizedBox(
                           height: 48,
-                          child: OutlinedButton(
-                            onPressed: () {},
-                            style: OutlinedButton.styleFrom(
-                              side: const BorderSide(
-                                color: AppColors.danger500,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                            ),
-                            child: TextWidget(
-                              text: "deactivate",
-                              type: AppTextType.body,
-                              color: AppColors.danger500,
-                              fontWeight: FontWeight.w500,
-                            ),
+                          child: AppButton(
+                            text: "deactivate",
+                            type: AppButtonType.secondary,
+                            radius: 6,
+                            onTap: () {},
                           ),
                         ),
                       ),
