@@ -2,6 +2,7 @@
 class AppImages {
   static const imageUrl = 'assets/images/';
   static const lottieUrl = 'assets/lotties/';
+  static const iconsUrl = 'assets/icons/';
 
 
   
@@ -12,15 +13,14 @@ class AppImages {
   static const String common = '${imageUrl}common.svg';
   static const String image2 = '${imageUrl}image2.svg';
   static const String image2png = '${imageUrl}image2.png';
-  // static const String backgroundImage = '${imageUrl}background.png';
-  // static const String splash = '${imageUrl}splash.png';
-  // static const String onboarding = '${imageUrl}onboarding.svg';
-  // static const String letterPad = '${imageUrl}letter-pad.png';
-
-  // static const String candidateLogo = '${imageUrl}candidate_logo.svg';
-  // static const String seriveProviderLogo = '${imageUrl}service_provider.svg';
-  // static const String customerLogo = '${imageUrl}customer.svg';
 
   // Lotties
   static const String sucessfull = '${lottieUrl}sucessfull.json';
+
+
+  //  Icons
+  static const String priceTag = '${iconsUrl}priceTag.svg';
+  static const String inventoryIcon = '${iconsUrl}inventoryIcon.svg';
+  static const String orderBagIcon = '${iconsUrl}orderBagIcon.svg';
 }
+

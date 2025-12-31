@@ -29,6 +29,12 @@
   "customer_name" : "Customer Name",
   "assign_product" : "Assign Product",
   "delivered": "Delivered",
-  "order_status": "Order Status"
-
+  "order_status": "Order Status",
+  "valentine_box": "Valentine Box",
+  "description": "Description",
+  "description_content" : "Lorem Ipsum is simply dummy text of the printing and sbd mmx typesetting industry. Lorem Ipsum the has been the industry's standard dummy text ever since the 1500s, when an unknown an printer took a galley of type and the scrambled it to make a type specimen book. It has survived not only five centuries,",
+  "whats_inside": "What’s Inside",
+  "active": "ACTIVE",
+  "edit_details": "Edit Details",
+  "deactivate"  : "Deactivate"
 }
