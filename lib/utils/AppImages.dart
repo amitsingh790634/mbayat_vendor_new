@@ -10,6 +10,8 @@ class AppImages {
   static const String groupImage = '${imageUrl}group1.svg';
   static const String groupImagePng = '${imageUrl}group1.png';
   static const String common = '${imageUrl}common.svg';
+  static const String image2 = '${imageUrl}image2.svg';
+  static const String image2png = '${imageUrl}image2.png';
   // static const String backgroundImage = '${imageUrl}background.png';
   // static const String splash = '${imageUrl}splash.png';
   // static const String onboarding = '${imageUrl}onboarding.svg';

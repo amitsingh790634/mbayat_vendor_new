@@ -8,7 +8,7 @@ class SetBoxScreen extends StatelessWidget {
     final tabProvider = context.watch<SetBoxTabProvider>();
 
     return CustomScaffold(
-showBackButton: true,
+      showBackButton: true,
       appBarBgColor: AppColors.primary500,
       backButtonColor: AppColors.white.withOpacity(0.1),
       backgroundColor: AppColors.white,
@@ -23,9 +23,9 @@ showBackButton: true,
               type: AppTextType.h1,
               fontWeight: FontWeight.w600,
             ),
-      
+
             const SizedBox(height: 16),
-      
+
             /// Tabs
             Row(
               children: [
@@ -42,16 +42,16 @@ showBackButton: true,
                 ),
               ],
             ),
-      
+
             const SizedBox(height: 24),
-      
+
             /// Content Switch
             tabProvider.selectedTab == 0
                 ? const SetBoxList()
                 : const ProductDetailsPlaceholder(),
-      
+
             const SizedBox(height: 24),
-      
+
             /// Create Button
             SizedBox(
               width: double.infinity,
@@ -151,9 +151,11 @@ class SetBoxCard extends StatelessWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.2),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
             blurRadius: 12,
-            offset: const Offset(0, 1),),
+            offset: const Offset(0, 1),
+          ),
         ],
       ),
       child: Column(

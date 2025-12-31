@@ -32,7 +32,7 @@ class _MyPhoneContent extends StatelessWidget {
         locale: context.locale,
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
-        home: SetBoxScreen(),
+        home: SetBoxDetailsScreen(),
         builder: (context, child) {
           return Stack(
             children: [

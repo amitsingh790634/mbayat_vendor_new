@@ -24,6 +24,8 @@ class LabelValueRow extends StatelessWidget {
         TextWidget(
           text: label,
           type: textType,
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
         ),
         kWidthGap(gap),
         TextWidget(

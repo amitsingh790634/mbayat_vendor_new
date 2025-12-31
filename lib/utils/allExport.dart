@@ -63,6 +63,8 @@ export 'package:mbayat_user_app/screens/Orders/HistoryOrder/HistoryOrderCard.dar
 export 'package:mbayat_user_app/screens/Orders/RecentOrder/RecentOrderCard.dart';
 export 'package:mbayat_user_app/screens/SetBoxScreen/SetBoxProvider/setBoxProvider.dart';
 export 'package:mbayat_user_app/screens/SetBoxScreen/setBoxScreen.dart';
+export 'package:mbayat_user_app/screens/SetBoxScreen/SetBoxDetails/setBoxDetails.dart';
+
 
 
 
