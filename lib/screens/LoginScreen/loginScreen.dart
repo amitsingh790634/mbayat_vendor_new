@@ -1,6 +1,4 @@
-
 import 'package:mbayat_user_app/utils/allExport.dart';
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,129 +10,134 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<LoginProvider>(context);
+    final provider = context.watch<LoginProvider>();
+    final size = MediaQuery.sizeOf(context);
+
     return CustomScaffold(
       appBarHeight: 0,
+      backgroundColor: AppColors.primary500,
       showBackButton: false,
-      isCenterTitle: false,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            kHeightGap(30),
-            TextWidget(
-              text: "welcome_vendor",
-              type: AppTextType.h1,
-              color: AppColors.white,
-              fontWeight: FontWeight.w400,
-            ),
-
-            kHeightGap(20),
-            Center(
-              child: SvgPic(
-                image: AppImages.loginImageUrl,
-                height: MediaQuery.sizeOf(context).height * 0.2,
-                fit: BoxFit.contain,
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
+      body: SafeArea(
+        bottom: false,
+        maintainBottomViewPadding: false,
+        minimum: EdgeInsets.zero,
+        child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: Column(
+            children: [
+              kHeightGap(30),
+              TextWidget(
+                text: "welcome_vendor",
+                type: AppTextType.h1,
                 color: AppColors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
-                ),
+                fontWeight: FontWeight.w400,
               ),
-              child: CustomPadding(
-                horizontal: true,
-                size: PaddingSize.lg,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    kHeightGap(30.sp),
-                    GestureDetector(
-                      onTap: () {
-                        // NavigationService.push( const RegisterScreen());
-                      },
-                      child: TextWidget(
+              kHeightGap(15),
+              SvgPic(image: AppImages.loginImageUrl, fit: BoxFit.contain),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40.r),
+                    topRight: Radius.circular(40.r),
+                  ),
+                ),
+                child: CustomPadding(
+                  horizontal: true,
+                  vertical: true,
+                  size: PaddingSize.sm,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      kHeightGap(30),
+                      TextWidget(
                         text: "login",
                         type: AppTextType.h1,
-                        fontSize: 22.sp,
+                        fontSize: 26.sp,
+                        color: AppColors.navyBlueColor,
+                        fontWeight: FontWeight.w700,
                       ),
-                    ),
 
-                    CustomTextFormField(
-                      prefixIconWidget: Icon(
-                        Icons.email_outlined,
-                        color: AppColors.primary500,
-                        size: 24.sp,
-                      ),
-                      controller: provider.emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      hintText: "admin@email.com",
-                      enabled: true,
-                      label: "",
-                    ),
-                    CustomTextFormField(
-                      prefixIconWidget: Icon(
-                        Icons.email_outlined,
-                        color: AppColors.primary500,
-                        size: 24.sp,
-                      ),
-                      controller: provider.passwordController,
-                      keyboardType: TextInputType.visiblePassword,
-                      hintText: "***",
-                      enabled: true,
-                      label: "",
-                      isPasswordField: true,
-                    ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          NavigationService.push(const ForgotScreen());
-                        },
-                        child: const TextWidget(
-                          text:"forgot_password",
-                          type: AppTextType.body,
-                          fontWeight: FontWeight.w600,
+                      CustomTextFormField(
+                        enabled: true,
+                        label: '',
+                        controller: provider.emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        hintText: "admin@email.com",
+                        prefixIconWidget: Icon(
+                          Icons.email_outlined,
+                          color: AppColors.primary500,
+                          size: 22.sp,
                         ),
                       ),
-                    ),
-
-                    AppButton(
-                      text: "enter",
-                      type: AppButtonType.primary,
-                      onTap: () {},
-                    ),
-                    // const SizedBox(height: 10), // Add your login form here
-                    const SizedBox(height: 30),
-
-                    const Row(
-                      children: [
-                        Expanded(child: Divider()),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: TextWidget(text: "or",
+                      kHeightGap(16),
+                      CustomTextFormField(
+                        enabled: true,
+                        label: '',
+                        showLabel: false,
+                        controller: provider.passwordController,
+                        keyboardType: TextInputType.visiblePassword,
+                        hintText: "***",
+                        isPasswordField: true,
+                        prefixIconWidget: Icon(
+                          Icons.lock_outline,
+                          color: AppColors.primary500,
+                          size: 22.sp,
+                        ),
+                      ),
+                      kHeightGap(15),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: GestureDetector(
+                          onTap: () {
+                            NavigationService.push(const ForgotScreen());
+                          },
+                          child: TextWidget(
+                            text: "forgot_password",
                             type: AppTextType.body,
+                            color: AppColors.primary500,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
-                        Expanded(child: Divider()),
-                      ],
-                    ),
-                    kHeightGap(30),
-                    Center(
-                      child: SvgPicture.asset(
-                        AppImages.logo,
-                        height: MediaQuery.sizeOf(context).height * 0.1,
                       ),
-                    ),
-                    kHeightGap(40),
-                  ],
+                      kHeightGap(15),
+                      AppButton(text: "enter", onTap: provider.login),
+                      kHeightGap(30),
+                      const Row(
+                        children: [
+                          Expanded(child: Divider()),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            child: TextWidget(
+                              text: "or",
+                              type: AppTextType.body,
+                            ),
+                          ),
+                          Expanded(child: Divider()),
+                        ],
+                      ),
+                      kHeightGap(30),
+                      Center(
+                        child: SvgPicture.asset(
+                          AppImages.logo,
+                          height: size.height * 0.1,
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).viewInsets.bottom > 0
+                            ? 20
+                            : MediaQuery.of(context).size.height * 0.09,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

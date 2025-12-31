@@ -39,7 +39,7 @@ class AppButton extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         height: height,
-        width: width??.infinity,
+        width: width ?? .infinity,
         padding: .symmetric(horizontal: 20),
         decoration: BoxDecoration(
           color: _backgroundColor(isPrimary),
@@ -86,16 +86,16 @@ class AppButton extends StatelessWidget {
     if (_disabled) {
       return TextStyle(
         fontFamily: AppTypography.cabinet,
-        fontSize: 14,
-        fontWeight: FontWeight.w500,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w700,
         color: AppColors.neutral400,
       );
     }
 
     return TextStyle(
       fontFamily: AppTypography.cabinet,
-      fontSize: 14,
-      fontWeight: FontWeight.w600,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w700,
       color: isPrimary ? AppColors.white : AppColors.primary500,
     );
   }

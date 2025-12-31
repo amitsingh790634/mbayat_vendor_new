@@ -1,5 +1,3 @@
-import 'package:mbayat_user_app/screens/HomeScreen/homeScreen.dart';
-
 import '../../Utils/allExport.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -27,9 +25,9 @@ class _OTPScreenState extends State<OTPScreen> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-
+    final double otpBoxWidth = (screenWidth - 80) / 6;
     final defaultPinTheme = PinTheme(
-      width: screenWidth * 0.25,
+      width: otpBoxWidth,
       height: screenHeight * 0.08,
       textStyle: TextStyle(
         fontSize: screenWidth * 0.06,
@@ -94,7 +92,6 @@ class _OTPScreenState extends State<OTPScreen> {
                     ),
 
                     // kHeightGap(deviceHeight(context) * .1),
-
                     Align(
                       alignment: Alignment.centerLeft,
                       child: richText(
@@ -119,6 +116,8 @@ class _OTPScreenState extends State<OTPScreen> {
 
                     kHeightGap(20),
                     Pinput(
+                      separatorBuilder: (index) => const SizedBox(width: 12),
+
                       validator: (value) =>
                           Validations.instance.otpValidation(value ?? ''),
                       closeKeyboardWhenCompleted: true,
@@ -128,12 +127,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       controller: authProvider.pinController,
                       showCursor: true,
                       pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-                      onCompleted: (pin) async {
-                        // authProvider.sendOTP(
-                        //   context: context,
-                        //   phoneNumber: widget.phoneNumber,
-                        // );
-                      },
+                      onCompleted: (pin) async {},
                       onChanged: (value) {},
                     ),
 
@@ -185,7 +179,8 @@ class _OTPScreenState extends State<OTPScreen> {
                       ],
                     ),
                     kHeightGap(30),
-                    Align(alignment: Alignment.bottomCenter,
+                    Align(
+                      alignment: Alignment.bottomCenter,
                       child: SvgPicture.asset(
                         AppImages.logo,
                         height: MediaQuery.sizeOf(context).height * 0.1,

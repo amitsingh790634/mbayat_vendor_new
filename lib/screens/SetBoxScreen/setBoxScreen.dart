@@ -7,67 +7,69 @@ class SetBoxScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final tabProvider = context.watch<SetBoxTabProvider>();
 
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// Title
-          TextWidget(
-            text: "Set Box",
-            type: AppTextType.h1,
-            fontWeight: FontWeight.w600,
-          ),
+    return CustomScaffold(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            /// Title
+            TextWidget(
+              text: "Set Box",
+              type: AppTextType.h1,
+              fontWeight: FontWeight.w600,
+            ),
 
-          const SizedBox(height: 16),
+            const SizedBox(height: 16),
 
-          /// Tabs
-          Row(
-            children: [
-              _TabButton(
-                text: "Order History",
-                isSelected: tabProvider.selectedTab == 0,
-                onTap: () => context.read<SetBoxTabProvider>().changeTab(0),
-              ),
-              const SizedBox(width: 12),
-              _TabButton(
-                text: "Product Details",
-                isSelected: tabProvider.selectedTab == 1,
-                onTap: () => context.read<SetBoxTabProvider>().changeTab(1),
-              ),
-            ],
-          ),
+            /// Tabs
+            Row(
+              children: [
+                _TabButton(
+                  text: "Order History",
+                  isSelected: tabProvider.selectedTab == 0,
+                  onTap: () => context.read<SetBoxTabProvider>().changeTab(0),
+                ),
+                const SizedBox(width: 12),
+                _TabButton(
+                  text: "Product Details",
+                  isSelected: tabProvider.selectedTab == 1,
+                  onTap: () => context.read<SetBoxTabProvider>().changeTab(1),
+                ),
+              ],
+            ),
 
-          const SizedBox(height: 24),
+            const SizedBox(height: 24),
 
-          /// Content Switch
-          tabProvider.selectedTab == 0
-              ? const SetBoxList()
-              : const ProductDetailsPlaceholder(),
+            /// Content Switch
+            tabProvider.selectedTab == 0
+                ? const SetBoxList()
+                : const ProductDetailsPlaceholder(),
 
-          const SizedBox(height: 24),
+            const SizedBox(height: 24),
 
-          /// Create Button
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary500,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+            /// Create Button
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.primary500,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: TextWidget(
+                  text: "Create a Box",
+                  type: AppTextType.body,
+                  color: AppColors.white,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              child: TextWidget(
-                text: "Create a Box",
-                type: AppTextType.body,
-                color: AppColors.white,
-                fontWeight: FontWeight.w500,
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

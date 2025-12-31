@@ -9,9 +9,7 @@ class MyPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => InternetProvider()),
-      ],
+      providers: [ChangeNotifierProvider(create: (_) => InternetProvider())],
       child: const _MyPhoneContent(),
     );
   }
@@ -25,14 +23,14 @@ class _MyPhoneContent extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: StatusBarStyle.light,
       child: MaterialApp(
-        title: 'Mbayat',
+        title: 'Mbayat Vendor',
         debugShowCheckedModeBanner: false,
         color: AppColors.primary500,
         navigatorKey: navigatorKey,
         locale: context.locale,
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
-        home: SetBoxScreen(),
+        home: SplashScreen(),
         builder: (context, child) {
           return Stack(
             children: [

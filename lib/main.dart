@@ -1,10 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:mbayat_user_app/NetworkService/Service/DioClient.dart';
 import 'package:mbayat_user_app/utils/app_locales.dart';
+import 'package:mbayat_user_app/utils/app_route_observer.dart';
 
 import 'Utils/allExport.dart';
 
 final loaderNotifier = LoaderNotifier();
+final AppRouteObserver routeObserver = AppRouteObserver();
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 SharedPreferences? sharedPrefs;
 final DioClient dioClient = DioClient(baseUrl: BASE_URL);

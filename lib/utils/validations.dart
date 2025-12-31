@@ -1,5 +1,4 @@
 import 'package:mbayat_user_app/Utils/AllExport.dart';
-import 'package:mbayat_user_app/utils/Const/appStrings.dart';
 
 class Validations {
   Validations._();
@@ -47,7 +46,7 @@ class Validations {
     if (value.trim().isEmpty) {
       return AppStrings.otpEmpty;
     }
-    if (value.length != 6) {
+    if (value.length != 4) {
       return AppStrings.otpInvalidLength;
     }
     if (!RegExp(r'^\d+$').hasMatch(value)) {

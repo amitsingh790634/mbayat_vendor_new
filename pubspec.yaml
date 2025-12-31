@@ -38,6 +38,7 @@ flutter:
   assets:
     - assets/l10n/
     - assets/images/
+    - assets/icons/
 
   fonts:
     - family: CabinetGrotesk

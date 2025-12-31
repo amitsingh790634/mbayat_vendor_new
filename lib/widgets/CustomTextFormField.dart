@@ -1,4 +1,3 @@
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:mbayat_user_app/utils/allExport.dart';
 
@@ -7,7 +6,7 @@ class CustomTextFormField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final FocusNode? focusNode;
   final Color? fillColor;
-  final String label;
+  final String? label;
   final bool showLabel;
   final bool? filled;
   final TextEditingController controller;
@@ -52,7 +51,7 @@ class CustomTextFormField extends StatefulWidget {
     this.fieldHeight = 40.0,
     this.maxLength,
     this.prefix,
-    required this.label,
+    this.label,
     this.showLabel = true,
     this.isPasswordField = false,
     this.prefixIconWidget,
@@ -102,12 +101,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.showLabel)
-          TextWidget(
-            text: widget.label,
-            color: widget.textColor,
-          ),
-        if (widget.showLabel) kHeightGap(4),
+        if (widget.showLabel && widget.label != null)
+          TextWidget(text: widget.label!, color: widget.textColor),
+
+        if (widget.showLabel && widget.label != null) kHeightGap(4),
         GestureDetector(
           onTap: widget.isDatePicker
               ? () {
@@ -115,11 +112,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   _selectDate(context);
                 }
               : widget.isTimePicker
-                  ? () {
-                      FocusScope.of(context).unfocus();
-                      _selectTime(context);
-                    }
-                  : null,
+              ? () {
+                  FocusScope.of(context).unfocus();
+                  _selectTime(context);
+                }
+              : null,
           child: AbsorbPointer(
             absorbing: widget.isDatePicker || widget.isTimePicker,
             child: TextFormField(
@@ -178,7 +175,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   color: AppColors.textFieldColor,
                 ),
                 prefixIcon: widget.prefixIconWidget,
-                suffixIcon: widget.suffixIconButton ??
+                suffixIcon:
+                    widget.suffixIconButton ??
                     (widget.suffixIcon != null
                         ? Icon(widget.suffixIcon, color: AppColors.primary900)
                         : null),
